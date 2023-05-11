@@ -43,7 +43,7 @@ while response == "Y":
         except ValueError as error:
                 print(error)
 
-    # Asks the user for the two numbers that'll be used for the equation chosen
+# Asks the user for the two numbers that'll be used for the equation chosen
     print(f"You are now using \033[1;32m{operations[operation][0]}\033[0m")
     first_number = get_number_input("Enter the first number: ")
     second_number = get_number_input("Enter the second number: ")
@@ -54,5 +54,20 @@ while response == "Y":
         print("\033[1;31mError: division by zero!\033[0m")
         continue
 
-    # Displays the result
+# Displays the result
     print("Result:", result)
+
+# Asks the user if the users wants to try again or not
+    #If yes, repeat Step 1
+    while True:
+        try:
+            response = input("Do you want to try again? Y/N: ").upper()
+            if response not in {"Y","N"}:
+                raise ValueError("\033[1;31mInvalid Response! Please enter a valid Letter.\033[0m")
+            break
+        except ValueError as error:
+                print(error)
+
+    #If no, display thank you
+print("\033[1;32mThank You for using!\033[0m")
+print("\033[32m","*"*100,"\033[m")
