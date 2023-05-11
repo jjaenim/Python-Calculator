@@ -53,3 +53,6 @@ while response == "Y":
     except ZeroDivisionError:
         print("\033[1;31mError: division by zero!\033[0m")
         continue
+
+    # Displays the result
+    print("Result:", result)
