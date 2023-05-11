@@ -42,3 +42,14 @@ while response == "Y":
             break
         except ValueError as error:
                 print(error)
+
+    # Asks the user for the two numbers that'll be used for the equation chosen
+    print(f"You are now using \033[1;32m{operations[operation][0]}\033[0m")
+    first_number = get_number_input("Enter the first number: ")
+    second_number = get_number_input("Enter the second number: ")
+    try:
+        _, operation_function = operations[operation]
+        result = operation_function(first_number, second_number)
+    except ZeroDivisionError:
+        print("\033[1;31mError: division by zero!\033[0m")
+        continue
