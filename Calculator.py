@@ -2,11 +2,21 @@
 # BSCpE 1-4
 # Python Caluclator
 
-# Pseudocode
 # Operation Methods
-# Asks the user to choose what math operation will be used (Addition, Subtraction, Multiplication and Division)
-# Asks the user for the two numbers that'll be used for the equation chosen
-# Displays the result
-# Asks the user if the users wants to try again or not
-    #If yes, repeat Step 1
-    #If no, display "Thank you"
+def add(first, second):
+    return first + second
+
+def subtract(first, second):
+    return first - second
+
+def multiply(first, second):
+    return first * second
+
+def divide(first, second):
+    return first / second
+def get_number_input(prompt):
+    while True:
+        try:
+            return float(input(prompt))
+        except ValueError:
+            print("\033[1;31mInvalid input! Please enter a valid number.\033[0m")
